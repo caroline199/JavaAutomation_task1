@@ -8,13 +8,18 @@ public class Calculator {
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter number 1:");
 
-            int numberOne = sc.nextInt();
+            double numberOne = sc.nextDouble();
             System.out.println("Select operation:");
             char operation = sc.next().charAt(0);
             System.out.println("Enter number 2:");
-            int numberTwo = sc.nextInt();
+            double numberTwo = sc.nextDouble();
 
             Numbers numbers = new Numbers(numberOne, numberTwo);
-            System.out.println("Your result " + numbers.getResult(operation));
+            String error = numbers.errorsCheck(operation);
+            if(error.isEmpty()) {
+                System.out.println("Your result " + numbers.getResult(operation));
+            } else {
+                System.out.println(error);
+            }
         }
 }
