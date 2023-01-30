@@ -1,4 +1,4 @@
-package org.example;
+package Lesson5.src.main.java.org.example;
 
 public class Numbers {
     private double x;
